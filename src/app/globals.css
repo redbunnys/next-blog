@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex; /* 使用 flexbox */
+  flex-direction: column; /* 垂直排列 */
+  min-height: 100vh; /* 确保最小高度为视口高度 */
+}
+
+.layout {
+    flex: 1; /* 使布局占满剩余空间 */
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    margin: 0 auto; /* 水平居中 */
+    height: auto; /* 确保布局高度为自动 */
+}
+
+.header {
+    background-color: #f8f9fa; /* 头部背景色 */
+    padding: 20px;
+    text-align: left; /* 将文本对齐方式改为左对齐 */
+    width: 100%; /* 头部宽度为 100% */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+.footer {
+    text-align: center; /* 页脚文本居中 */
+    padding: 10px; /* 页脚内边距 */
+    background-color: #f1f1f1; /* 页��背景色 */
+    width: 100%; /* 页脚宽度为 100% */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 限制为两行 */
+    overflow: hidden;
+}
