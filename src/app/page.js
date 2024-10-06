@@ -2,18 +2,17 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import ArticleCard from '../components/ArticleCard';
-import { loadMoreArticles } from '../utils/articleUtils';
-import { initialArticles } from '../data/articles';
+import { articles } from '../data/articles';
 
 const Page = () => {
-    const [articles, setArticles] = useState(initialArticles);
+    const [displayedArticles, setDisplayedArticles] = useState(articles.slice(0, 5));
     const [loading, setLoading] = useState(false);
     const loadMoreRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
-                loadMoreArticles(setArticles, setLoading);
+                loadMoreArticles();
             }
         });
 
@@ -28,9 +27,20 @@ const Page = () => {
         };
     }, [loadMoreRef]);
 
+    const loadMoreArticles = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setDisplayedArticles(prevArticles => [
+                ...prevArticles,
+                ...articles.slice(prevArticles.length, prevArticles.length + 5)
+            ]);
+            setLoading(false);
+        }, 1000);
+    };
+
     return (
-        <div className="layout mt-5 w-full flex flex-col items-center">
-            {articles.map((article, index) => (
+        <div className="  w-full flex  flex-col items-center">
+            {displayedArticles.map((article, index) => (
                 <ArticleCard key={article.id} article={article} isFirst={index === 0} />
             ))}
             <div ref={loadMoreRef} className="mt-5">

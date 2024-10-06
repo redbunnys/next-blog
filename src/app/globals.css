@@ -7,6 +7,11 @@
   --foreground: #171717;
 }
 
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -20,7 +25,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex; /* 使用 flexbox */
   flex-direction: column; /* 垂直排列 */
-  min-height: 100vh; /* 确保最小高度为视口高度 */
+  min-width: 100vw;
+  /* min-height: 100vh; 确保最小高度为视口高度 */
 }
 
 .layout {
@@ -43,7 +49,7 @@ body {
 .footer {
     text-align: center; /* 页脚文本居中 */
     padding: 10px; /* 页脚内边距 */
-    background-color: #f1f1f1; /* 页��背景色 */
+    background-color: #f1f1f1; /* 页背景色 */
     width: 100%; /* 页脚宽度为 100% */
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
 }
@@ -53,4 +59,14 @@ body {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; /* 限制为两行 */
     overflow: hidden;
+}
+
+/* ... 其他样式 ... */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-mt-16 {
+    scroll-margin-top: 4rem;
 }

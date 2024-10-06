@@ -15,21 +15,21 @@ const SiteInfo = ({ totalVisits, todayVisits, foundingDate }) => {
     ];
 
     return (
-        <div className="bg-gray-100 rounded-lg shadow-md p-4 mt-6 mb-4">
+        <div className="  p-1 mt-6 mb-4">
             <div className="space-y-4 text-sm">
                 <div className="flex flex-col items-start">
                     <p className="text-gray-600 flex items-center">
                         <FaRegCopyright className="mr-2 text-gray-500" />
                         备案号：
                     </p>
-                    <p className="text-gray-800 ml-6 mt-1">粤ICP备XXXXXXXX号-X</p>
+                    <p className="text-gray-800 mt-2 ">粤ICP备XXXXXXXX号-X</p>
                 </div>
                 <div>
                     <p className="text-gray-600 mb-2 flex items-center">
                         <FaLink className="mr-2 text-gray-500" />
                         友情链接：
                     </p>
-                    <div className="flex flex-wrap gap-2 ml-6">
+                    <div className="flex flex-wrap gap-2">
                         {friendlyLinks.map((link, index) => (
                             <Link key={index} href={link.url} className={`${getRandomColor()} text-xs text-gray-700 px-2 py-1 rounded shadow hover:opacity-80 transition-opacity`}>
                                 {link.name}

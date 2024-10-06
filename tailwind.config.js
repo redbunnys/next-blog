@@ -13,5 +13,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+  darkMode: 'class', // 或者 'media' 如果您想基于系统设置
 };

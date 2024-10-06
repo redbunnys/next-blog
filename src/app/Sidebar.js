@@ -14,7 +14,7 @@ const Sidebar = () => {
 
     return (
         <aside className="flex flex-col h-full">
-            <div className="p-5 flex-grow">
+            <div className="p-2 flex-grow mt-4" >
                 <PersonalInfo {...personalInfo} />
                 <TagList title="标签列表" items={tags} />
                 <Tree title="分类树" data={categories} />
